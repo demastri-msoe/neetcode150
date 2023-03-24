@@ -44,26 +44,4 @@ public class ReverseLinkedList {
         return q;
     }
 
-    /**
-     * Definition for singly-linked list. Given...
-     */
-    public static class ListNode {
-
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
-
-
 }
