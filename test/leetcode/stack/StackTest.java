@@ -74,5 +74,8 @@ public class StackTest {
 
         outVal = obj.evalRPN(new String[]{"10","6","9","3","+","-11","*","/","*","17","+","5","+"});
         Assertions.assertEquals(22, outVal);
+
+        outVal = obj.evalRPN(new String[]{"10","6","-"});
+        Assertions.assertEquals(4, outVal);
     }
 }

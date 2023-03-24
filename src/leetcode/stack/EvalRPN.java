@@ -14,7 +14,7 @@ public class EvalRPN {
                         exp.push( arg1+arg2);
                         break;
                     case "-":
-                        exp.push( arg1-arg2);
+                        exp.push( arg2-arg1);
                         break;
                     case "*":
                         exp.push( arg1*arg2);
