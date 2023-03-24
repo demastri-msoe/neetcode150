@@ -3,7 +3,7 @@ package leetcode.arraysandhashinng;
 import java.util.HashSet;
 import java.util.Set;
 
-public class containsDuplicate {
+public class ContainsDuplicate {
     public boolean containsDuplicate(int[] nums) {
         Set<Integer> thisSet = new HashSet<Integer>();
         for (int i : nums) {

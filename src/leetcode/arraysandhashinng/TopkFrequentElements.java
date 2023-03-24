@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-public class topkfrequentelements {
+public class TopkFrequentElements {
     public int[] topKFrequent(int[] nums, int k) {
         HashMap<Integer, Integer> occ = new HashMap<>();
         for (int x : nums) {

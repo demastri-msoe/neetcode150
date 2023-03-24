@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-public class groupAnagram {
+public class GroupAnagram {
     public List<List<String>> groupAnagrams(String[] strs) {
         List<List<String>> outList = new ArrayList<>();
 

@@ -1,10 +1,8 @@
 package leetcode.arraysandhashinng;
 
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
 
-public class twoSum {
+public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> diff = new HashMap<>();
 
