@@ -169,5 +169,40 @@ public class LinkedListTest {
 
         }
     }
+    @Test
+    public void reorderTest() {
+        ReorderList o = new ReorderList();
 
+        ListNode n;
+        n = new ListNode(4);
+        n = new ListNode(3, n);
+        n = new ListNode(2, n);
+        n = new ListNode(1, n);
+        o.reorderList( n );
+        Assertions.assertEquals( 1, n.val );
+        n = n.next;
+        Assertions.assertEquals( 4, n.val );
+        n = n.next;
+        Assertions.assertEquals( 2, n.val );
+        n = n.next;
+        Assertions.assertEquals( 3, n.val );
+        Assertions.assertNull( n.next );
+
+        n = new ListNode(5);
+        n = new ListNode(4, n);
+        n = new ListNode(3, n);
+        n = new ListNode(2, n);
+        n = new ListNode(1, n);
+        o.reorderList( n );
+        Assertions.assertEquals( 1, n.val );
+        n = n.next;
+        Assertions.assertEquals( 5, n.val );
+        n = n.next;
+        Assertions.assertEquals( 2, n.val );
+        n = n.next;
+        Assertions.assertEquals( 4, n.val );
+        n = n.next;
+        Assertions.assertEquals( 3, n.val );
+        Assertions.assertNull( n.next );
+    }
 }
