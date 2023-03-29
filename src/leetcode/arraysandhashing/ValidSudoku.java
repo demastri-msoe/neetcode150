@@ -4,7 +4,7 @@
  * Date: 3/23/2023
  */
 
-package leetcode.arraysandhashinng;
+package leetcode.arraysandhashing;
 
 import java.util.ArrayList;
 import java.util.List;

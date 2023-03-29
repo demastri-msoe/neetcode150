@@ -1,4 +1,4 @@
-package leetcode.arraysandhashinng;
+package leetcode.arraysandhashing;
 
 public class ProdOfArrayExceptSelf {
   // can't use division
