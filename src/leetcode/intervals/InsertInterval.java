@@ -1,9 +1,27 @@
+/**
+ * Course: NA but helpful for data structures...
+ * Author: John DeMastri
+ * Date: 3/26/2023
+ */
 package leetcode.intervals;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
+/**
+ * https://leetcode.com/problems/insert-interval/
+ *
+ * You are given an array of non-overlapping intervals intervals where
+ * intervals[i] = [starti, endi] represent the start and the end of the ith interval
+ * and intervals is sorted in ascending order by starti. You are also given an interval
+ * newInterval = [start, end] that represents the start and end of another interval.
+ *
+ * Insert newInterval into intervals such that intervals is still sorted in ascending order by
+ * starti and intervals still does not have any overlapping intervals (merge overlapping
+ * intervals if necessary).
+ *
+ * Return intervals after the insertion.
+ */
 public class InsertInterval {
     /**
      * Couple of edge cases -
@@ -15,7 +33,8 @@ public class InsertInterval {
      * <p>
      * for each elt in the list -> curElt
      * if !building && (new.high < cur.low || new.low > cur.high, output curElt
-     * if !building && new.low is in the inclusive range of cur, low = min(cur.low, new.low), set building = true
+     * if !building && new.low is in the inclusive range of cur, low =
+     *      min(cur.low, new.low), set building = true
      * if building, three cases -
      * 1 - high is in this range - output [low, max(range.high, new.high)] - building = false
      * 2 - high is above this range (do nothing more, get next), leave building = true
@@ -25,11 +44,11 @@ public class InsertInterval {
      *
      * @param intervals
      * @param newInterval
-     * @return
+     * @return set of intervals with new one inserted
      */
     public int[][] insert(int[][] intervals, int[] newInterval) {
         if (intervals.length == 0) {
-            return new int[][]{newInterval};
+            return new int[][] {newInterval};
         }
         List<int[]> outIntervals = new ArrayList<>();
         boolean written = false;
@@ -66,13 +85,13 @@ public class InsertInterval {
                 continue;
             }
             if (!building && eltLo <= newHi) {
-                lowBound = (eltLo < newLo ? eltLo : newLo);
-                highBound = (eltHi > newHi ? eltHi : newHi);
+                lowBound = eltLo < newLo ? eltLo : newLo;
+                highBound = eltHi > newHi ? eltHi : newHi;
                 building = true;
             }
             if (building) {
                 if (eltLo <= highBound) {
-                    highBound = (eltHi > newHi ? eltHi : newHi);
+                    highBound = eltHi > newHi ? eltHi : newHi;
                 } else {
                     outIntervals.add(new int[] {lowBound, highBound});
                     outIntervals.add(curInterval);
